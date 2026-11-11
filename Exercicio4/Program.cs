@@ -1,18 +1,29 @@
 ﻿Console.WriteLine("Digite um número: ");
 int numero = int.Parse(Console.ReadLine());
+int contador = 0;
 
-for (int i = 1; i <= numero; i++)
+for (int i = 2; i <= numero; i++)
 {
-    if(i == 2 || i == 3)
+    contador = 0;
+
+    for (int j = i; j >= 2 ; j--)
     {
-        Console.WriteLine("Número é primo: " + i);
+        if (i % j == 0)
+        {
+            contador++;
+        }
+
+        if(contador > 1)
+        {
+            break;
+        }
     }
 
-    if (i % 2 != 0 && i % 3 != 0)
+    if(contador <= 1)
     {
-        Console.WriteLine("Número é primo: " + i);
+        Console.WriteLine("Número primo: " + i);
     }
 
-   Thread.Sleep(200);
+
 
 }
